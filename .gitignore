@@ -1,6 +1,8 @@
 # vim files
 *.swp
 *.tmp
+# python stuff
+**/__pycache/
 # c stuff
 *.out
 # MacOS stuff
