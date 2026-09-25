@@ -31,7 +31,7 @@ def bin_to_dec(bi: str):
         result += int(bi[n]) *  2 ** (len(bi) - 1 - n)
     return result
 
-# test some stuff
+# test this
 if __name__ == "__main__":
     import os
     result = dec_to_bin_remainder(int(os.getenv("NUMBER")))
