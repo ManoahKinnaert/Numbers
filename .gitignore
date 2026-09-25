@@ -1,5 +1,7 @@
 # vim files
 *.swp
 *.tmp
+# c stuff
+*.out
 # MacOS stuff
 *.DS_Store
