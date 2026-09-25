@@ -17,17 +17,23 @@ def dec_to_bin_remainder(dec: int):
     while dec > 0:
         res = str(dec % 2) + res 
         dec //= 2
-    return f"0b{res}"
+    return f"0b{res}" if res != "" else "0b0"
 
 def bin_to_dec(bi: str):
     """
     This function takes in a string representation of a binary number and converts it to a positive integer.
     **Algorithm Description**
+    We loop from right to left and multiply the bit with a power of two (that increases as we move from right to left).
     """
-    for n in range(len(bin) - 1, 0, -1):
-        pass
+    bi = bi.split("0b")[1]  # remove binary identifier
+    result = 0
+    for n in range(len(bi) - 1, -1, -1):
+        result += int(bi[n]) *  2 ** (len(bi) - 1 - n)
+    return result
 
 # test some stuff
 if __name__ == "__main__":
     import os
-    print(dec_to_bin_remainder(int(os.getenv("NUMBER"))))
+    result = dec_to_bin_remainder(int(os.getenv("NUMBER")))
+    print(result)
+    print(bin_to_dec(result))
